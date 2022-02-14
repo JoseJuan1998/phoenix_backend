@@ -59,7 +59,6 @@ defmodule Backend.MixProject do
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test]}
-
     ]
   end
 

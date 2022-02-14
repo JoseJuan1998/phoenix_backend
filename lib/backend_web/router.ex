@@ -14,12 +14,19 @@ defmodule BackendWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+
   # coveralls-ignore-stop
 
   scope "/", BackendWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/api", BackendWeb do
+    pipe_through :api
+
+    get "/categories", CategoryController, :index
   end
 
   # Other scopes may use custom stacks.
