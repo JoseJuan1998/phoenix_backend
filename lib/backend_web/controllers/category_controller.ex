@@ -1,9 +1,11 @@
 defmodule BackendWeb.CategoryController do
   use BackendWeb, :controller
 
+  alias Backend.Categories
+
   def index(conn, _params) do
     conn
     |> put_status(:ok)
-    |> json(%{hi: "my first api using elixir"})
+    |> render("categories.json", categories: Categories.all())
   end
 end
