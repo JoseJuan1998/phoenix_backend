@@ -27,6 +27,8 @@ defmodule BackendWeb.Router do
     pipe_through :api
 
     get "/categories", CategoryController, :index
+    post "/categories", CategoryController, :create
+    get "/categories/:id", CategoryController, :show
   end
 
   # Other scopes may use custom stacks.

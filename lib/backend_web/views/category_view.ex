@@ -9,7 +9,7 @@ defmodule BackendWeb.CategoryView do
     %{
       id: category.id,
       name: category.name,
-      descripion: category.description
+      description: category.description
     }
   end
 end

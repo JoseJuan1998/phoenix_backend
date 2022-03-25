@@ -1,28 +1,20 @@
 defmodule Backend.Categories do
   @moduledoc false
 
-  alias Backend.Repo
   alias Backend.Categories.Category
+  alias Backend.Repo
 
   def all do
-    # [
-    #   %{
-    #     id: 1,
-    #     name: "Sports"
-    #   },
-    #   %{
-    #     id: 2,
-    #     name: "News"
-    #   },
-    #   %{
-    #     id: 3,
-    #     name: "Entertainment"
-    #   },
-    #   %{
-    #     id: 4,
-    #     name: "Documental"
-    #   }
-    # ]
     Repo.all(Category)
+  end
+
+  def show(%{"id" => id}) do
+    Repo.get(Category, id)
+  end
+
+  def create(params) do
+    params
+    |> Category.create_changeset()
+    |> Repo.insert()
   end
 end
